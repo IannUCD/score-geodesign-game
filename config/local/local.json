@@ -1,0 +1,10 @@
+{
+    "version":"0.1",
+    "title":"Swords Geodesign Game",
+    "extended_description":"A game where you get to decide how the best strategy to respond to climate challenges",
+    "applicable_ebas":["de1df293-271b-4212-8c6e-02183e875018"],
+    "total_available_budget":"100000",
+    "currency":"EUR",
+    "name": "Swords",
+    "logo": "https://score-bucket.s3.us-west-2.amazonaws.com/cat.png"
+}

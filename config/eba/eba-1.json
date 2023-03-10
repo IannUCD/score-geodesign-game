@@ -1,0 +1,9 @@
+{
+    "id":"6c3c338f-5587-4d93-8e6c-a0b23cc78989",
+    "name":"Dune Stabilization",
+    "icon":"https://score-bucket.s3.us-west-2.amazonaws.com/puppy.png",
+    "extended_details":{
+        "cost":"1000",
+        "currency":"EUR"
+    }
+}
