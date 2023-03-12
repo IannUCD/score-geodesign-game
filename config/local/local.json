@@ -4,5 +4,7 @@
     "applicable_ebas":["de1df293-271b-4212-8c6e-02183e875018"],
     "total_available_budget":"100000",
     "currency":"EUR",
-    "logo": "https://score-bucket.s3.us-west-2.amazonaws.com/cat.png"
+    "logo": "https://score-bucket.s3.us-west-2.amazonaws.com/cat.png",
+    "center":{"lat":23.00,"lng":-0.23}
+    //"bounds":["51.2867602","51.6918741","-0.5103751","0.3340155"]
 }
