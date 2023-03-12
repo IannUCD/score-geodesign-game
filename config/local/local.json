@@ -6,5 +6,4 @@
     "currency":"EUR",
     "logo": "https://score-bucket.s3.us-west-2.amazonaws.com/cat.png",
     "center":{"lat":23.00,"lng":-0.23}
-    //"bounds":["51.2867602","51.6918741","-0.5103751","0.3340155"]
 }
