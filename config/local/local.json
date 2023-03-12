@@ -1,9 +1,23 @@
 {
-    "name": "Swords",
-    "extended_description":"Something about this jurisdiction",
-    "applicable_ebas":["de1df293-271b-4212-8c6e-02183e875018"],
-    "total_available_budget":"100000",
-    "currency":"EUR",
-    "logo": "https://score-bucket.s3.us-west-2.amazonaws.com/cat.png",
-    "center":[23.00,-0.23]
+	"jurisdiction": [
+		{
+			"name": "Dun Laoghaire",
+			"description": "A beautiful sea side town",
+			"eba_array": ["cef0cbf3-6458-4f13-a418-ee4d7e7505dd", "cef0cbf3-6458-4f13-a418-ee4d7e7505df", "cef0cbf3-6458-4f13-a418-ee4d7e7505df"],
+			"total_available_budget": 100000,
+			"currency": "EURO",
+			"logo": "score.com/images/dunlaoghaire.jpg",
+            "center": ["23.0, -0.21"]
+		},
+
+		{
+			"name": "Dublin",
+			"description": "Viking Town",
+			"eba_array": ["cef0cbf3-5555-4f13-a418-ee4d7e7505dd", "cef0cbf3-4444-4f13-a418-ee4d7e7505df", "cef0cbf3-3333-4f13-a418-ee4d7e7505df"],
+			"total_available_budget": 200000,
+			"currency": "EURO",
+			"logo": "score.com/images/dublin.jpg",
+            "center": ["23.0, -0.21"]
+		}
+	]
 }
