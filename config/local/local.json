@@ -5,5 +5,5 @@
     "total_available_budget":"100000",
     "currency":"EUR",
     "logo": "https://score-bucket.s3.us-west-2.amazonaws.com/cat.png",
-    "center":{"lat":23.00,"lng":-0.23}
+    "center":[23.00,-0.23]
 }
