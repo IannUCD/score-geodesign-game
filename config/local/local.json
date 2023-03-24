@@ -1,6 +1,7 @@
 {
-	"jurisdiction": [
+	"jurisdictions": [
 		{
+			"id": "4e456f1a-5da1-4a21-83b1-547a1710ec3a",
 			"name": "Dun Laoghaire",
 			"description": "A beautiful sea side town",
 			"eba_array": ["cef0cbf3-6458-4f13-a418-ee4d7e7505dd", "cef0cbf3-6458-4f13-a418-ee4d7e7505df", "cef0cbf3-6458-4f13-a418-ee4d7e7505df"],
@@ -11,6 +12,7 @@
 		},
 
 		{
+			"id":"31b121db-4a27-47b5-9cf6-ee868a84075a",
 			"name": "Dublin",
 			"description": "Viking Town",
 			"eba_array": ["cef0cbf3-5555-4f13-a418-ee4d7e7505dd", "cef0cbf3-4444-4f13-a418-ee4d7e7505df", "cef0cbf3-3333-4f13-a418-ee4d7e7505df"],
@@ -19,5 +21,12 @@
 			"logo": "score.com/images/dublin.jpg",
             "center": ["23.0, -0.21"]
 		}
-	]
+	],
+	"external_raster_layers":[{
+		"id": "8e94eb87-aaf4-48fb-bc6b-a5eaefaf71a6",
+		"jurisdiction_id": "4e456f1a-5da1-4a21-83b1-547a1710ec3a",
+		"mapbox_id":"cygnus2936.78demrb0",
+		"name": "OPW DTM"
+	
+	}]
 }
