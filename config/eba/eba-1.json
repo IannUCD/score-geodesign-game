@@ -21,7 +21,7 @@
 		    "name":"Dune Stabilization",
 		    "description": "A description of this EBA",
 		    "icon":"https://score-bucket.s3.us-west-2.amazonaws.com/puppy.png",
-		    "cost": 1000
+		    "cost": 100000
 		},
 	    
 		{
