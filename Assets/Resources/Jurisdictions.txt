@@ -1,0 +1,25 @@
+{
+	"jurisdiction": [
+		{
+			"name": "Dun Laoghaire",
+			"description": "A beautiful sea side town",
+			"eba_array": ["cef0cbf3-6458-4f13-a418-ee4d7e7505dd", "cef0cbf3-6458-4f13-a418-ee4d7e7505df", "cef0cbf3-6458-4f13-a418-ee4d7e7505df"],
+			"total_available_budget": 100000,
+			"currency": "EURO",
+			"logo": "score.com/images/dunlaoghaire.jpg",
+			"center_lat": 23.00,
+			"center_lng": -0.23
+		},
+
+		{
+			"name": "Dublin",
+			"description": "Viking Town",
+			"eba_array": ["cef0cbf3-5555-4f13-a418-ee4d7e7505dd", "cef0cbf3-4444-4f13-a418-ee4d7e7505df", "cef0cbf3-3333-4f13-a418-ee4d7e7505df"],
+			"total_available_budget": 200000,
+			"currency": "EURO",
+			"logo": "score.com/images/dublin.jpg",
+			"center_lat": 25.00,
+			"center_lng": -1.23
+		}
+	]
+}
