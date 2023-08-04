@@ -3,8 +3,12 @@
 // JavaScript code for handling the map and updating hidden input fields
 const map = L.map('map').setView([51.5074, -0.1278], 10);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// Replace 'your_mapbox_access_token' with your Mapbox access token
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=your_mapbox_access_token', {
+    attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1
 }).addTo(map);
 
 // Event listener for form submission
