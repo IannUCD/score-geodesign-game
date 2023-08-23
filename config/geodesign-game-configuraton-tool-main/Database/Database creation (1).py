@@ -21,12 +21,13 @@ def create_db():
                  )''')
     # Create the 'ebas' table
     c.execute('''CREATE TABLE IF NOT EXISTS ebas (
-                 id INTEGER PRIMARY KEY,
-                 name TEXT NOT NULL,
-                 description TEXT NOT NULL,
-                 icon TEXT NOT NULL,
-                 cost INTEGER NOT NULL
-                 )''')
+                id TEXT PRIMARY KEY,
+                name TEXT NOT NULL,
+                description TEXT NOT NULL,
+                icon TEXT NOT NULL,
+                cost INTEGER NOT NULL
+                )''')
+
     conn.commit()
     conn.close()
 #####
@@ -53,7 +54,7 @@ def insert_initial_ebas():
         ('6c3c338f-5587-4d93-8e6c-a0b23cc78989', 'Cultivate in town', 'Urban agriculture practices to grow crops or animals for personal consumption or to sell locally within and around cities...', 'Urban', 70000),
         ('6c3c338f-5587-4d93-8e6c-a0b23cc78989', 'Saltmarsh and mudflat management and restoration', 'Management and restoration of areas through hydrologic restoration/re-establishment of tidal hydrodynamics in saltmarshers and mudflats...', 'Saltmarsh', 70000),
         ('6c3c338f-5587-4d93-8e6c-a0b23cc78989', 'Promote water infiltration', 'Land depressions designed to have water-storage capacity and manage surface runoff water during rainfall events...', 'Infiltration', 70000),
-        
+
         # Add more EBA data as needed
     ]
     c.executemany('''INSERT INTO ebas (id, name, description, icon, cost)
@@ -91,4 +92,3 @@ if __name__ == '__main__':
     create_db()  # Create the database and tables when the app starts
     insert_initial_ebas()  # Insert initial EBA data
     app.run(debug=True)
-
