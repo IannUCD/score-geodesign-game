@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Config Generator</title>
+    <title>Configuration Generator</title>
     <!-- Include Leaflet CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -16,18 +16,32 @@
     </style>
 </head>
 <body>
-    <h1>Config Generator</h1>
-    <form id="config-form" action="/generate_config" method="post">
-        <!-- Input fields for city name, description, Ebas, cost, currency, and budget -->
+    <h1>City Configuration Generator</h1>
+    <form action="/generate_config" method="post">
         <label for="city-name">City Name:</label>
         <input type="text" name="city-name" required><br>
-        <!-- Other input fields for city description, Ebas selection, mean cost, currency, and budget -->
 
-        <!-- Hidden input fields for map center and bounds -->
-        <input type="hidden" id="map-center" name="map-center">
-        <input type="hidden" id="map-bounds" name="map-bounds">
+        <label for="city-description">City Description:</label>
+        <textarea name="city-description" required></textarea><br>
 
-        <input type="submit" value="Generate Config">
+        <label>Select EBAs:</label><br>
+        {% for eba_name in eba_names %}
+            <input type="checkbox" name="selected-ebas" value="{{ eba_name }}"> {{ eba_name }}<br>
+        {% endfor %}
+
+        <label for="mean-cost">Mean Cost:</label>
+        <input type="number" name="mean-cost" required><br>
+
+        <label for="currency">Currency:</label>
+        <input type="text" name="currency" required><br>
+
+        <label for="map-center">Map Center (JSON):</label>
+        <input type="text" name="map-center" required><br>
+
+        <label for="map-bounds">Map Bounds (JSON):</label>
+        <input type="text" name="map-bounds" required><br>
+
+        <input type="submit" value="Generate Configuration">
     </form>
 
     <div id="map" style="height: 600px;"></div> <!-- Map container -->
