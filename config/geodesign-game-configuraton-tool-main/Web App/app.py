@@ -3,6 +3,7 @@ import json
 import os
 import zipfile
 from io import BytesIO
+import sqlite3
 
 app = Flask(__name__)
 
@@ -19,21 +20,31 @@ def generate_config():
         selected_ebas = request.form.getlist('selected-ebas')
         mean_cost = request.form['mean-cost']
         currency = request.form['currency']
-        map_center = json.loads(request.form['map-center'])  # Get map center as JSON
-        map_bounds = json.loads(request.form['map-bounds'])  # Get map bounds as JSON
+        map_center = json.loads(request.form['map-center'])
+        map_bounds = json.loads(request.form['map-bounds'])
 
-        # Get form data from the POST request
-        selected_ebas = request.form.getlist('selected-ebas')
+        # Connect to your SQLite database
+        conn = sqlite3.connect('your_database_path_here.db')  # <-- Update this with your actual database path
+        c = conn.cursor()
+        
+        eba_data = []
 
-        # Construct eba JSON data based on the selected_ebas and your database
-        eba_data = []  # Initialize an empty list
         for eba_id in selected_ebas:
-        # Fetch EBA details from your database and append to eba_data
-        eba_details = {...}  # Fetch details based on eba_id
-        eba_data.append(eba_details)
+            c.execute("SELECT * FROM ebas WHERE id=?", (eba_id, ))
+            eba_details = c.fetchone()
+            eba_dict = {
+                'id': eba_details[0],
+                'name': eba_details[1],
+                'description': eba_details[2],
+                'icon': eba_details[3],
+                'cost': eba_details[4]
+            }
+            eba_data.append(eba_dict)
 
+        # Close the database connection
+        conn.close()
 
-        # Construct globals JSON data
+                # Construct globals JSON data
         globals_data = {
             "version": "0.1",
             "center": map_center,
@@ -66,9 +77,9 @@ def generate_config():
         # Set the response headers for downloading the zip file
         zip_file.seek(0)
         return send_file(zip_file, attachment_filename='config.zip', as_attachment=True)
-
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
+
