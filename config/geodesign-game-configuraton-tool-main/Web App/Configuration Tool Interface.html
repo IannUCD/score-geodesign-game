@@ -158,8 +158,8 @@ footer {
 
     <section id="city-page">
         <h2>City Configuration</h2>
-        <form id="config-form">
-            <!-- Your existing city configuration form elements here -->
+        <form id="config-form" action="/generate_config" method="post">
+            <!-- City configuration form elements -->
             <label for="city-name">City Name:</label>
             <input type="text" name="city-name" required><br>
 
@@ -178,24 +178,33 @@ footer {
             <!-- Hidden input fields for map center and bounds -->
             <input type="hidden" id="map-center" name="map-center">
             <input type="hidden" id="map-bounds" name="map-bounds">
-        </form>
 
-        <div id="map">
-            <h2>Game Map</h2>
-        </div> <!-- Map container -->
+            <div id="map">
+                <h2>Game Map</h2>
+            </div> <!-- Map container -->
+
+            <input type="submit" value="Generate Configuration">
+        </form>
     </section>
 
     <section id="ebas-page">
         <h2>EBAs List</h2>
         <form id="ebas-form">
-            <!-- Your EBA selection form elements here -->
+            <!-- EBA selection form elements -->
             <label for="selected-ebas">Choose the EBAs you want to add to the config:</label><br>
-            <input type="checkbox" name="selected-ebas" value="eba1"> EBA 1<br>
-            <input type="checkbox" name="selected-ebas" value="eba2"> EBA 2<br>
+            {% for eba_name in eba_names %}
+                <input type="checkbox" name="selected-ebas" value="{{ eba_name }}"> {{ eba_name }}<br>
+            {% endfor %}
         </form>
     </section>
-    <!-- Include Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <div style="text-align: center;">
+        <button id="download-config-button" class="download-button" onclick="downloadConfig()">Download Actual Config</button>
+    </div>
+
+    <footer>
+        <a href="https://score-eu-project.eu"><img src="https://score-eu-project.eu/wp-content/uploads/2021/09/SCORE-LOGO-web.png" alt="SCORE project Logo" class="logo"></a>
+    </footer>
 
     <script>
         // JavaScript code for handling the map and updating hidden input fields
@@ -260,12 +269,5 @@ footer {
         });
     }
 </script>
-    </script>
-    <div style="text-align: center;">
-        <button id="download-config-button" class="download-button" onclick="downloadConfig()">Download Actual Config</button>
-    </div>
-    <footer>
-        <a href="https://score-eu-project.eu"><img src="https://score-eu-project.eu/wp-content/uploads/2021/09/SCORE-LOGO-web.png" alt="SCORE project Logo" class="logo"></a>
-    </footer>
 </body>
 </html>
