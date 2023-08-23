@@ -22,8 +22,16 @@ def generate_config():
         map_center = json.loads(request.form['map-center'])  # Get map center as JSON
         map_bounds = json.loads(request.form['map-bounds'])  # Get map bounds as JSON
 
-        # Construct eba JSON data based on the selected_ebas and your database (see example provided earlier)
-        eba_data = [...]  # Replace with your implementation
+        # Get form data from the POST request
+        selected_ebas = request.form.getlist('selected-ebas')
+
+        # Construct eba JSON data based on the selected_ebas and your database
+        eba_data = []  # Initialize an empty list
+        for eba_id in selected_ebas:
+        # Fetch EBA details from your database and append to eba_data
+        eba_details = {...}  # Fetch details based on eba_id
+        eba_data.append(eba_details)
+
 
         # Construct globals JSON data
         globals_data = {
