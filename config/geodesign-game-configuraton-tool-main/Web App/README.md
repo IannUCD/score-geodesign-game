@@ -1,6 +1,4 @@
-Alright, based on the files and their contents provided, here is a `README.md` for your folder:
 
----
 
 # Geodesign Game Configuration Generator
 
